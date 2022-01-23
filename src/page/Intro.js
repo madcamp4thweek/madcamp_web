@@ -1,10 +1,13 @@
 import React from 'react';
 import './page.css';
+import IntroMain from '../component/IntroMain';
+// import {Parallex,ParallaxLayer} from '@react-spring/parallax';
+
 
 const Intro = ()=>{
     return(
         <div className='intro'>
-            What's happening
+            <IntroMain/>
         </div>    
         
     );

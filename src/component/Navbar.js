@@ -6,9 +6,9 @@ import {Link} from 'react-router-dom';
 
 const menu = [
     {name :"소개", address:'/intro'},
-    {name:"경험", address:'exp'},
-    {name:"질문", address:'faq'},
-    {name:"공지사항", address:'notice'},
+    {name:"경험", address:'/exp'},
+    {name:"질문", address:'/faq'},
+    {name:"공지사항", address:'/notice'},
 ];
 
 const Navbar = ()=>{

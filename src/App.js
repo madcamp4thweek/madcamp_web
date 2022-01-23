@@ -16,6 +16,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <div className='main_structure'>
         <Navbar/>
         <Routes>
           <Route exact path='/' element = {<Main />}/>
@@ -25,7 +26,9 @@ function App() {
           <Route exact path='/notice' element = {<Notice/>}/>
           <Route exact path='/apply' element = {<Apply/>}/>
         </Routes>
+        </div>
       </Router>
+      
     </div>
   );
 }
