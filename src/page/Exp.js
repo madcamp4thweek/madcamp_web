@@ -1,108 +1,34 @@
-import React, {useState, Suspense} from 'react';
+import React, {useState, Suspense, useRef} from 'react';
 import './page.css';
-import ReactPlayer from 'react-player'
-import { useSpring, animated } from 'react-spring'
-import Carousel from 'react-elastic-carousel';
 
-import { ReactComponent as Mic } from '../icons/mic.svg';
-import { ReactComponent as Video } from '../icons/video.svg';
-import { ReactComponent as People } from '../icons/people.svg';
-import { ReactComponent as Share } from '../icons/share.svg';
-import { ReactComponent as Chat } from '../icons/chat.svg';
+import { Environment, OrbitControls } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
+import {useSpring, animated} from 'react-spring'
+
+import Mac from '../component/Mac-draco';
+import Screen from '../component/Screen';
 
 
 const Exp = ()=>{
 
-    const urlList = ["etc/jaewoo.mp4","etc/jaewoo1.mp4","etc/daegun1.mp4","etc/daegun2.mp4"];
-    const [currIdx, setCurrIdx] = useState(0);
-
-
-    const [mute, setMute] = useState(false);
-    const [pause, setPause] = useState(false);
+    const [open, setOpen] = useState(false);
+    const {opacity, transform} = useSpring({ opacity : open?0:1, transform : `translate(-50%,${open?100:-100}px)`, config:{mass: 5, tension: 500, friction: 100 } })
 
     return(
-        <div className="ScreenWrapper">
-            <div className="ScreenLeft">
-                <div className="ScreenHeader">
-                    <div className="ScreenTitle">
-                        <div className="TitleCircleWrapper">
-                            <div className="TitleCircle Red"></div>
-                            <div className="TitleCircle Yellow"></div>
-                            <div className="TitleCircle Green"></div>
-                        </div>
-                        <div className="TitleText">MadCamp Review</div>
-                    </div>
-                    <div className="ScreenItems">
-                        <Carousel 
-                            showEmptySlots
-                            onNextStart={(currentItem)=>console.log(currentItem.index)}
-                            onPrevStart={(currentItem)=>console.log(currentItem.index)}
-                            itemsToShow={3}>
-                            {urlList.map((item , idx)=>{
-                                return(
-                                    <div className="ItemWrapper" onClick={()=>setCurrIdx(idx)}>
-                                        <ReactPlayer style={{borderRadius : '10px'}} key={idx} width ="160px" height="90px" url={item}/>
-                                    </div>
-                                )
-                            })}
-                        </Carousel>
-                    </div>
-                </div>
-                <div className="ScreenBody">
-                <ReactPlayer
-                    volume = {Number(mute)}
-                    playing = {pause}
-                    width ="100%"
-                    height = "100%"
-                    url={urlList[currIdx]}
-                    controls = {true}
-                    />
-
-                </div>
-                <div className="ScreenFooter">
-                    <div className="FooterLeft">
-                        <div className="FooterItem" onClick={()=>setMute(!mute)}>
-                            <Mic />
-                            <div className="FooterText">{mute?"Mute":"UnMute"}</div>
-                        </div>
-                        <div className="FooterItem" onClick={()=>setPause(!pause)}>
-                            <Video />
-                            <div className="FooterText">{pause?"Pause":"Play"}</div>
-                        </div>
-                    </div>
-                    <div className="FooterMid">
-                        <div className="FooterItem">
-                            <People />
-                            <div className="FooterText">Interviewee</div>
-                        </div>
-                        <div className="FooterItem" >
-                            <Chat />
-                            <div className="FooterText">Chat</div>
-                        </div>
-                        <div className="FooterItem" >
-                            <Share />
-                            <div className="FooterText">Share</div>
-                        </div>
-                    </div>
-                    <div className="FooterRight">
-                        <div>
-                            <div>End</div>
-                        </div>
-
-                    </div>
-
-                </div>
+            <div style={{flex :1}}>
+                <Canvas  style={{width:"100%", height : "100%"}} dpr={[1, 2]} camera={{ position: [0,-50,10], fov: 25, near: 0.1, far: 500 }}>
+                    <Suspense fallback={null}>
+                        <Mac open={open} setOpen={setOpen} />
+                    </Suspense>
+                    <Environment preset="city" />
+                </Canvas>
+                <animated.div 
+                    className="ExpText"
+                    style={{opacity : opacity, transform : transform }}>
+                        {`몰입의\n경험이란\n바로 이런 것.`}</animated.div>
             </div>
-
-            <div className="ScreenRight">
-
-            </div>
-
-
-       </div>
-
     );
-};
+};                 
 
 
 export default Exp;
