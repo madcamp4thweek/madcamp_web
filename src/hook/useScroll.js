@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import {throttle} from 'lodash';
 
-export function useScroll() {
+export function useScroll(handleScroll) {
   const [scrollY, setScrollY] = useState(0);
 
   const listener = () => {
-    console.log(window.pageYOffset);
-    // console.log("scrolled");
-    // await setScrollY(window.pageYOffset);
+
+    setScrollY(window.pageYOffset);
     
   };
 

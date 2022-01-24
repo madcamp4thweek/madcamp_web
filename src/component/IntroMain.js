@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import './IntroMain.css';
 import {useSpring, animated, config} from 'react-spring';
 import {Parallax, ParallaxLayer} from '@react-spring/parallax';
@@ -11,25 +11,54 @@ import wave from '../img/wave.gif'
 
 
 
-
+const useFadeIn=()=>{
+    const [isFadedIn,setFadedIn] = useState(false);
+    const props = useSpring({from:{opacity:0}, opacity:isFadedIn ? 1:0});
+    return [isFadedIn,setFadedIn,props];
+}
 
 
 
 
 const IntroMain = ()=>{
-    const props = useSpring({ to: { opacity: 1 }, from: { opacity: 0 } })
+
     const {scrollY} = useScroll();
 
-    useEffect(()=>{
 
-    })
+    const [isFadedIn,setFadedIn ,props]= useFadeIn();
+    const [isFadedIn2,setFadedIn2,props2] = useFadeIn();
+    const introMain = useRef(null);
+
+
+    useEffect(()=>{
+        console.log(scrollY);
+
+        // 하는
+        if (1000>scrollY && scrollY>600  && !isFadedIn){
+             setFadedIn(true);
+        }else if ((scrollY<600 ) && isFadedIn){
+            setFadedIn(false);
+        }
+
+        //경험
+        if (1200>scrollY && scrollY>800 &&!isFadedIn2  ){
+            setFadedIn2(true);
+            introMain.current.classList.remove('fixed');
+       }else if ((scrollY<800)&&isFadedIn2){
+           setFadedIn2(false);
+           introMain.current.classList.add('fixed');
+
+       }
+    },[scrollY])
+
+
     return(
         <>
             <div className='intro_main_container'>
-                <div className='intro_main'>
-                    <animated.div style={props} className = 'intro_main_title'>
+                <div className='intro_main fixed' ref={introMain}>
+                    <div className = 'intro_main_title intro_main'>
                         몰입.
-                    </animated.div>
+                    </div>
                     <div className = 'intro_main_description'>
                     몰입캠프에서는 하루종일 개발에 몰두하며 기획부터 프로토타입까지, 개발의 전 과정을 경험할 수 있습니다. 참여 전 개발 실력은<br/> 
                     전혀 중요하지 않습니다. 직접 도전하고 부딪혀보며 무엇이든 시도해 볼 수 있는 성장한 나를 발견할 수 있습니다. 다양한 매력의 친구들과 함께하며 협업, 교류, 소통의 즐거움을 만나보세요.
@@ -39,17 +68,20 @@ const IntroMain = ()=>{
                     </div>
                 </div>
             </div>
-            <div className='intro_flex_container'>
+            <div className='intro_flex_container' >
                 <div className='intro_flex_title'>
                     <div className='first_title'>
                         몰입&nbsp;
                     </div>
-                    <div>
+                    
+                    <animated.div style={props}>
                         하는&nbsp;
-                    </div>
-                    <div>
+                    </animated.div>
+                    
+                    <animated.div style={props2}>
                         경험&nbsp;
-                    </div>
+
+                    </animated.div>
                 </div>
                 <div className='intro_flex_img_container'>
                     <img className='intro_flex_img' src='/coding_text.png' alt='coding_text'></img>

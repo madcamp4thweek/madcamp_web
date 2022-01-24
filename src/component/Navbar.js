@@ -23,8 +23,8 @@ const Navbar = ()=>{
                 </Link>
             </div>
             <div className='navbar_menu'>
-                {menu.map((item)=>(
-                    <Link to={item.address} className='navbar_item'>
+                {menu.map((item,idx)=>(
+                    <Link key={idx} to={item.address} className='navbar_item'>
                         {item.name}
                     </Link>
                 ))}
