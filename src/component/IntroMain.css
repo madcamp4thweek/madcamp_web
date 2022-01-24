@@ -31,13 +31,23 @@
     display:block;
     margin:0 auto;
     max-width:800px;
+    box-sizing:border-box;
+
     width: 85%;
 }
 
 
+
+
+/* ----------------------------------- */
+
+
+
 .intro_flex_container{
     width : 100%;
-    height: 300vh;
+    height: 293vh;
+    box-sizing:border-box;
+
     padding-top:60px;   
     box-sizing:border-box;
     background-color: #151515;
@@ -67,20 +77,95 @@
 .intro_flex_img{
     display:block;
     margin:0 auto;
-    max-width:800px;
+    box-sizing:border-box;
+
+    max-width:1000px;
     width: 85%;
 }
 
+.intro_flex_description_container{
+    margin-left: 17%;
+    box-sizing:border-box;
+
+    padding:10vh 0;
+}
+
+.intro_flex_description_title_container{
+    display:flex;
+    align-items: center;
+    padding:2vh 0;
+    
+}
 .intro_flex_description_title{
     font-size:50px;
-    
-    color : #c4c4c4;
-    margin:3vh 0 3vh 17% ;
+    color : #fff;
+    margin-left:2%;
 }
 .intro_flex_description_detail{
     font-size:20px;
     width : 570px;
     color : #c4c4c4;
-    margin:3vh 0 3vh 17% ;
+
+    padding:2vh 0;
+
 }
 
+.intro_plan_link{
+    font-size:20px;
+    color:#3888FF;
+    padding:2vh 0 0 0;
+
+}
+
+/* ----------------------------------- */
+
+
+.intro_flex_life_container{
+    width:100%;
+    height: 100vh;
+    box-sizing:border-box;
+
+    padding-left: 12%;
+    padding-top:60px;   
+    box-sizing:border-box;
+    background-color: #fff;
+}
+.intro_flex_life_title_container{
+    display:flex;
+    align-items: center;
+    padding-top:10vh;
+    padding:3vh 0 3vh 0;
+    
+}
+.intro_flex_life_title{
+    font-size:70px;
+    color : #4d4d4d;
+    margin-left:2%;
+}
+.intro_flex_life_description{
+    font-size:20px;
+    width : 550px;
+    color : #4d4d4d;
+    padding:2vh 0;
+}
+
+
+.intro_flex_life_illustration_container{
+    width:80%;
+    height:30vh;
+    box-sizing:border-box;
+
+}
+
+
+.intro_flex_life_wave_illustration_container{
+    width:100%;
+
+    box-sizing:border-box;
+    overflow:hidden;
+}
+
+.intro_flex_life_wave_illustration{
+    max-width:1000px;
+    overflow:hidden;
+}
