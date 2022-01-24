@@ -1,0 +1,198 @@
+.intro_main {
+    width : 100%;
+    height: 100vh;
+    padding-top:60px;
+    box-sizing:border-box;
+}
+.intro_main_title {
+    font-size: 120px;
+    color : #4D4D4D;
+    text-align: center;
+}
+.intro_main_description{
+    font-size:20px;
+    width : 570px;
+    color : #4D4D4D;
+    margin: 3vh auto;
+    text-align:center
+}
+.intro_main_img{
+    display:block;
+    margin:0 auto;
+}
+.parallax_container{
+    top:60px;
+    left:0;
+}
+
+.small_title1{
+    margin-right: 10%;
+    font-size: 80px;
+    font-weight: bold;
+    color: #4D4D4D;
+    line-height: 130%;
+    text-align : right;
+}
+
+.small_title2{
+    margin-left: 10%;
+    font-size: 80px;
+    font-weight: bold;
+    color: #4D4D4D;
+    line-height: 130%;
+    text-align : left;
+    margin-top : 10%;
+}
+
+
+.small_title3{
+    font-size: 80px;
+    font-weight: bold;
+    color: #4D4D4D;
+    text-align : center;
+}
+
+
+.small_title4{
+    margin-top: 10%;
+    font-size: 80px;
+    font-weight: bold;
+    color: #4D4D4D;
+    text-align : center;
+}
+
+.description1{
+    margin-right: 10%;
+    font-size: 25px;
+    font-weight: bold;
+    color: #868686;
+    text-align : right;
+}
+
+.description2{
+    margin-left: 10%;
+    font-size: 25px;
+    font-weight: bold;
+    color: #868686;
+    text-align : left;
+}
+
+.description3{
+    margin-top: 3%;
+    font-size: 25px;
+    font-weight: bold;
+    color: #868686;
+    text-align : center;
+}
+.temp2{
+    margin-top: 10%
+}
+
+.prof1{
+    width: 380px;
+    height: 500px;
+    margin-top: 5%;
+    margin-right: 3%
+}
+.prof2{
+    width: 380px;
+    height: 500px;
+    margin-top: 5%;
+    margin-left: 3%;
+}
+
+.inline{
+    display: inline;
+}
+.prof_career_start{
+    margin-top: 1%;
+    line-height: 160%;
+}
+.explain1{
+    font-size: 30px;
+    color: #000000;
+    text-align : left;
+    font-weight: bolder;
+    margin-left: 5%;
+}
+
+.explain2{
+    font-size: 30px;
+    color: #a5a5a5;
+    text-align : left;
+    font-weight: bold;
+    margin-left: 1%;
+}
+
+.explain3{
+    font-size: 30px;
+    color: #000000;
+    text-align : left;
+    font-weight: bold;
+    margin-right: 3%;
+    margin-left: 1%;
+}
+
+.explain4{
+    font-size: 20px;
+    color: #000000;
+    text-align : left;
+    font-weight: bold;
+    margin-left: 3%;
+}
+
+
+
+.explain5{
+    font-size: 20px;
+    color: #a5a5a5;
+    text-align : left;
+    font-weight: bold;
+    
+    margin-left: 1%;
+}
+
+.explain6{
+    font-size: 15px;
+    color: #000000;
+    text-align : left;
+    font-weight: bold;
+    margin-right: 8%;
+    margin-left: 1%;
+}
+
+ .madcamp_icon{
+     margin-left:10%;
+ }
+
+ .startup_start{
+    margin-left: 10%;
+    font-size: 40px;
+    font-weight: bold;
+    color: #000000;
+    line-height: 100%;
+    text-align : left;
+    float: left;
+    margin-top : 8%;
+ }
+ .startup_description{
+     text-align: center;
+     font-size: 25px;
+     font-weight: bold;
+     color: #969696;
+     float: right;
+     margin-top: 1%;
+ }
+ .startup_img{
+     width: 40%;
+     object-fit: cover;
+     float:right;
+     margin-top:5%;
+     margin-right: 10%;
+
+ }
+.clock{
+    position: relative;
+    margin-top: 10%;
+    right: 5%
+}
