@@ -1,0 +1,217 @@
+.intro_main {
+    width : 100%;
+    height: 100vh;
+    padding-top:60px;
+    box-sizing:border-box;
+}
+.intro_main_title {
+    font-size: 120px;
+    color : #4D4D4D;
+    text-align: center;
+}
+.intro_main_description{
+    font-size:20px;
+    width : 570px;
+    color : #4D4D4D;
+    margin: 3vh auto;
+    text-align:center
+}
+.intro_main_img{
+    display:block;
+    margin:0 auto;
+}
+.parallax_container{
+    top:60px;
+    left:0;
+}
+
+.small_title1{
+    margin-right: 10%;
+    font-size: 80px;
+    font-weight: bold;
+    color: #4D4D4D;
+    line-height: 130%;
+    text-align : right;
+}
+
+.small_title2{
+    margin-left: 10%;
+    font-size: 80px;
+    font-weight: bold;
+    color: #4D4D4D;
+    line-height: 130%;
+    text-align : left;
+    margin-top : 10%;
+}
+
+
+.small_title3{
+    font-size: 80px;
+    font-weight: bold;
+    color: #4D4D4D;
+    text-align : center;
+}
+
+
+.small_title4{
+    margin-top: 10%;
+    margin-bottom: 5%;
+    font-size: 80px;
+    font-weight: bold;
+    color: #4D4D4D;
+    text-align : center;
+}
+
+.description1{
+    margin-right: 10%;
+    font-size: 25px;
+    font-weight: bold;
+    color: #868686;
+    text-align : right;
+}
+
+.description2{
+    margin-left: 10%;
+    font-size: 25px;
+    font-weight: bold;
+    color: #868686;
+    text-align : left;
+}
+
+.description3{
+    margin-top: 3%;
+    font-size: 25px;
+    font-weight: bold;
+    color: #868686;
+    text-align : center;
+}
+.prof{
+    width: 380px;
+    height: 500px;
+}
+
+.explain1{
+    font-size: 30px;
+    color: #000000;
+    text-align : left;
+    font-weight: bolder;
+}
+
+.explain2{
+    font-size: 30px;
+    color: #a5a5a5;
+    text-align : left;
+    font-weight: bold;
+}
+
+.explain3{
+    font-size: 30px;
+    color: #000000;
+    text-align : left;
+    font-weight: bold;
+}
+.ex_box{
+    display: flex;
+    width: 60%;
+    height: 30%;
+    justify-content:
+    space-evenly;
+}
+
+.bigbox{
+    display:flex;
+    justify-content: center;
+}
+
+.container1{
+    flex:1;
+    padding-left: 10%;
+}
+
+.container2{
+    flex:1;
+    padding-right: 10%;
+}
+
+.explain4{
+    font-size: 20px;
+    color: #000000;
+    font-weight: bold;
+    text-align: left;
+}
+
+.explain5{
+    font-size: 20px;
+    color: #a5a5a5;
+    font-weight: bold;
+    text-align : left;
+}
+
+.explain6{
+    font-size: 15px;
+    color: #000000;
+    font-weight: bold;
+    text-align: left;
+}
+ .madcamp_icon{
+     margin-left:10%;
+ }
+
+ .startup_start{
+    margin-left: 10%;
+    font-size: 40px;
+    font-weight: bold;
+    color: #000000;
+    line-height: 100%;
+    text-align : left;
+    float: left;
+    margin-top : 8%;
+ }
+ .startup_description{
+     text-align: center;
+     font-size: 25px;
+     font-weight: bold;
+     color: #969696;
+     float: right;
+     margin-top: 1%;
+ }
+ .startup_img{
+     width: 40%;
+     object-fit: cover;
+     float:right;
+     margin-top:5%;
+     margin-right: 10%;
+ }
+ 
+.env2{
+    left: 50%;
+    bottom: 47.5%;
+}
+
+.Ipad{
+    width: 80%;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+}
+
+.image{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    position: absolute;
+    left: 15%;
+    top: 20%;
+}
+
+.ul_setting{
+    margin-left: 10%;
+}
+.left{
+    text-align: left;
+}
+
+.clock{
+    margin-top: 10%;
+    right: 5%
+}
