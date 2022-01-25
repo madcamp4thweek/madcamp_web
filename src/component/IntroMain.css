@@ -170,8 +170,9 @@
 
 }
 .intro_flex_description_detail{
-    font-size:20px;
-    width : 570px;
+    
+    font-size:1.4vw;
+    width : 40vw;
     color : #c4c4c4;
 
     padding:2vh 0;
@@ -179,7 +180,7 @@
 }
 
 .intro_plan_link{
-    font-size:20px;
+    font-size:1.4vw;
     color:#3888FF;
     padding:2vh 0 0 0;
 
@@ -229,8 +230,10 @@
     margin-left:0.5%;
 }
 .intro_flex_life_description{
-    font-size:20px;
-    width : 550px;
+    /* font-size:20px;
+    width : 550px; */
+    font-size:1.4vw;
+    width : 38.5vw;
     color : #4d4d4d;
     padding:2vh 0;
 }
