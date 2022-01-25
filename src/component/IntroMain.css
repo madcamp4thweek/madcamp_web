@@ -237,6 +237,8 @@
 }
 
 .ship_container{
+    width:20%;
+
     display:inline-block;
     position:absolute;
     bottom:10%;
@@ -254,11 +256,18 @@
 
 }
 
-.intro_flex_life_wave_illustration{
+.intro_flex_life_sail_illustration{
     /* max-width:1000px; */
     
     width:100%;
     height:100%;
+}
+
+.intro_flex_life_wave_illustration{
+    /* max-width:1000px; */
+    
+    width:100%;
+    /* height:100%; */
 }
 
 .illustration_transparent_container{
@@ -267,6 +276,6 @@
     left:0%;
     width:100%;
     height:100%;
-
+    z-index:2000;
 }
 
