@@ -100,24 +100,27 @@ const IntroMain = ({scrollY}) => {
        //코드 사진
        if (4200<scrollY && scrollY<4700 &&!isFadedIn3  ){
             setFadedIn3(true);
-            introFlex.current.classList.remove('fixed');
-            setSecondStyle({position:'absolute', top:`4260px`})
+            setFadedIn4(true);
+            console.log("why");
+
         }else if ((scrollY<4200)&&isFadedIn3){
             setFadedIn3(false);
-            introFlex.current.classList.add('fixed');
-            setSecondStyle({position:'fixed', top:null})
+            setFadedIn4(false);
+
+            
         }
         
 
-        //화살표
-        if (4700<scrollY && scrollY<5400&& !isFadedIn4){
-            setFadedIn4(true);
-        }else if((scrollY<4700)&&isFadedIn4){
-            setFadedIn4(false);
+        //fix 해제
+        if (4700<scrollY && scrollY<5400){
+            introFlex.current.classList.remove('fixed');
+            setSecondStyle({position:'absolute', top:`4760px`})
+        }else if(scrollY<4700){
+            introFlex.current.classList.add('fixed');
+            setSecondStyle({position:'fixed', top:null})
         }
 
         if( 5500<scrollY && scrollY<5700 ){
-            setFadedIn4(false);
         }
 
         

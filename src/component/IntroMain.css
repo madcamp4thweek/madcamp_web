@@ -122,12 +122,14 @@
 }
 
 .arrow_container{
-    position:fixed;
-    top:0%;
-    left:50%;
     height:70vh;
-    transform: translate(-90%);
+    margin : 0 auto;
     z-index:3000;
+    display:flex;
+    justify-content:center;
+    transform: translateX(-20px);
+    margin:-10vh 0;
+
 }
 
 .intro_flex_img_container{
