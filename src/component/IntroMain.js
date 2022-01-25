@@ -172,7 +172,7 @@ const IntroMain = ({scrollY}) => {
             <div className='intro_main_scroll_wrapper'>
                 <div className='intro_main_container fixed' ref={introMain}>
                     <div className='intro_main ' >
-                        <div className = 'intro_main_title intro_main'>
+                        <div className = 'intro_main_title'>
                             몰입.
                         </div>
                         <div className = 'intro_main_description'>
