@@ -70,10 +70,10 @@
     color: #868686;
     text-align : center;
 }
-.prof{
+/* .prof1{
     width: 380px;
     height: 500px;
-}
+} */
 
 .explain1{
     font-size: 30px;
@@ -106,20 +106,24 @@
 .bigbox{
     display:flex;
     justify-content: center;
+    margin-top: 20%;
 }
 
 .container1{
-    flex:1;
-    padding-left: 20%;
-    
+    flex:1;    
+    margin-left: 20%;
+
 }
 
 .container2{
     flex:1;
-    padding-right: 20%;
-    
+    margin-right: 20%;
 }
 
+.name{
+    margin-top: 50%;
+    align-items: center;
+}
 .explain4{
     font-size: 20px;
     color: #000000;
@@ -150,8 +154,8 @@
     color: #000000;
     line-height: 120%;
     text-align : left;
-    float: left;
-    margin-top : 8%;
+
+    margin-top : 3%;
     margin-left: 20%;
  }
  .startup_description{
@@ -159,18 +163,28 @@
      font-size: 25px;
      font-weight: bold;
      color: #969696;
-     
-     margin-top: 1%;
-     
+     text-align : right;
+     margin-right: 20%;
  }
- .startup_img{
+ /* .startup_img{
      width: 40%;
      object-fit: cover;
      float:right;
      margin-top:5%;
      margin-right: 10%;
  }
- 
+  */
+.logobox{
+    display:flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+.startup_img1{
+    flex:1;
+}
+.startup_img2{
+    flex:1;
+}
 .env2{
     left: 50%;
     bottom: 47.5%;

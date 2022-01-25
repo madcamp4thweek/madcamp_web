@@ -79,12 +79,12 @@ const Dg = () => {
             </div>
             <div className='bigbox' data-aos='fade-up'>
                 <div className ='container1' data-aos='fade-up'>
-                    <div className = 'prof'>
+                    <div>
                         <Card1></Card1>
                     </div>
                     
                     {/* <img className = 'prof' src = "png/BK.png"></img> */}
-                    <div>
+                    <div className = 'name'>
                         <div className = 'explain1' style={{display: "inline"}}>
                             장병규
                         </div>
@@ -99,11 +99,11 @@ const Dg = () => {
                 </div>
 
                 <div className='container2' data-aos='fade-up'>
-                    <div className='prof'>
+                    <div>
                         <Card2></Card2>
                     </div>
                     {/* <img className = 'prof' src = "png/SY.png"></img> */}
-                    <div>
+                    <div className = 'name'>
                         <div className = 'explain1' style={{display: "inline"}}>
                             류석영
                         </div>
@@ -117,19 +117,26 @@ const Dg = () => {
                 </div>
             </div>
 
-         
+            <div className = 'logobox'>
+                <div data-aos='fade-up' data-aos-offset='200'>
+                    <img className = "startup_img1" src= "png/bonangels.png"></img> 
+                </div>
+                <div data-aos='fade-up' data-aos-offset='200'>
+                    <img className = "startup_img2" src= "png/joinstartup.png"></img> 
+                </div>
+            </div>
+
 
             <div className = "startup_start" data-aos='fade-up'>
-                반가워요 후배님들 <br/> 
-                세상을 바꿀 획기적인 <br/> 
-                우리 스타트업들을 <br/> 
-                소개할게요.
+                반가워요 후배님들.<br/> 
+                세상을 바꿀 획기적인 
+                우리 스타트업들을 소개할게요.
             </div>
-            <div data-aos='fade-up' data-aos-offset='400'>
+            {/* <div data-aos='fade-up' data-aos-offset='400'>
                 <img className = "startup_img" src= "png/startup_logo.png"></img> 
-            </div>
+            </div> */}
 
-            <div className = "startup_description" data-aos='fade-up'>
+            <div className = "startup_description" data-aos='fade-up' data-aos-offset = '50'>
                 캠프 기간동안 여러 대표님들의 강연을 통해 <br/> 스타트업의 희로애락을 미리 체험해보세요.
             </div>
 
