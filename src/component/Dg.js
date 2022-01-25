@@ -5,6 +5,7 @@ import './Ipad.style.module.css'
 import AOS from "aos"
 import 'aos/dist/aos.css';
 import Ipad from './Ipad.tsx'
+import network from '../img/network.gif';
 
 
 const Dg = () => {
@@ -40,7 +41,7 @@ const Dg = () => {
                 <img src = "png/temp.png" alt = "기술스택"></img>
             </div>
             <div className = 'temp2' data-aos='zoom-in' data-aos-offset='600'>
-                <img src = "png/temp3.png" alt = "아이콘"></img>
+                <img className= 'network_icon' src = {network} alt = "아이콘"></img>
             </div>
             <div className = 'small_title3' data-aos='zoom-in'>
                 강력한 <br/> 네트워킹
