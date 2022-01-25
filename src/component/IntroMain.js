@@ -1,17 +1,17 @@
 import React, {useEffect, useState, useRef} from 'react';
 import './IntroMain.css';
 import {useSpring, animated, config} from 'react-spring';
-import {Parallax, ParallaxLayer} from '@react-spring/parallax';
+// import {Parallax, ParallaxLayer} from '@react-spring/parallax';
 import {throttle} from 'lodash';
 
-import useScroll from '../hook/useScroll';
-import {ReactComponent as Moon} from '../img/moon.svg';
-import {ReactComponent as Sun} from '../img/sun.svg';
+// import useScroll from '../hook/useScroll';
+
 import {ReactComponent as Ship} from '../img/ship.svg';
 import {ReactComponent as Arrow} from '../img/Arrow.svg';
-import wave from '../img/wave.gif'
-import sun from '../img/sun.gif'
-import moon from '../img/moon.gif'
+import wave from '../img/wave.gif';
+import sail from '../img/sail.gif';
+import sun from '../img/sun.gif';
+import moon from '../img/moon.gif';
 
 
 
@@ -29,26 +29,18 @@ const useMoveHorizontal= ()=>{
     return [positionX,setPositionX,props];
 };
 
-const handleIntersection= (entries) =>{
-    const entry = entries[0];
-    if (entry.isIntersecting){
-        console.log("hihihih");
-
-    }
-}
-const illuWidth = 700;
 
 
 
-const IntroMain = () => {
 
-    const {scrollY} = useScroll();
-    // const {transitionScroll,setTransitionScroll} = useState(0);
-    const [secondPassed,setSecondPassed] = useState(false);
+
+const IntroMain = ({scrollY}) => {
+
+    
+
     const [cropRatio, setCropRatio] = useState(100);
     const [secondStyle,setSecondStyle] = useState(null);
-    const [lifeStyle,setLifeStyle] = useState(null);
-
+    const [lifeStyle, setLifeStyle]= useState(null);
 
 
     const [isFadedIn,setFadedIn ,props]= useFadeIn();
@@ -67,37 +59,26 @@ const IntroMain = () => {
     const introFlexLifeContainerRef = useRef(null);
     const lifeIllustrationRef = useRef(null);
 
-    
-
-
-
 
     useEffect(()=>{ 
         console.log(scrollY);
 
-        // const illuWidth = lifeIllustrationRef.current.innerWidth;
-        
-
 
         lifeIllustrationRef.current.addEventListener('mousemove',throttle(e=>{
             console.log(e.offsetX, e.offsetY);
-            console.log('width :', illuWidth);
             setShipPosition(e.offsetX-125);
         },50))
 
 
-        const observer = new IntersectionObserver(handleIntersection,{threshold:1.0});
-        if (introFlexDescriptionContainerRef.current){
-            observer.observe(introFlexDescriptionContainerRef.current);
-        }
 
 
-        if (!secondPassed && 500<scrollY && scrollY<1500){
+
+        if ( 500<scrollY && scrollY<1500){
             setCropRatio(33*(1-(scrollY-500)/1000));
         }else if (scrollY>1500 && cropRatio!==0) {
             setCropRatio(0);
             
-            // setSecondPassed(true);
+
         }
 
         // 하는
@@ -141,14 +122,12 @@ const IntroMain = () => {
 
         
 
-        //
         if (5700<scrollY && scrollY<6200 &&!isFadedIn5 ){
             setFadedIn5(true);
-            // introFlex.current.classList.add('pure_fixed');
-            // introFlexDescriptionContainerRef.current.classList.remove('fixed');
+
         }else if ((scrollY<5700)&&isFadedIn5){
             setFadedIn5(false);
-            // introFlexDescriptionContainerRef.current.classList.add('fixed');
+
         }
         
 
@@ -168,19 +147,22 @@ const IntroMain = () => {
             setFadedIn6(false);
             introFlexLifeContainerRef.current.classList.add('hide');
             setFadedIn7(false);
+        }
+
+        if (7969<scrollY){
+            setSecondStyle({position:'fixed', top:null});
+            // setFadedIn7(false);
+            setLifeStyle({position:'absolute',top:'8029px'});
+            introFlexLifeContainerRef.current.classList.remove('fixed');
+        }else if( 7500<scrollY && scrollY<=7969){
+            // setFadedIn7(true);
+            introFlexLifeContainerRef.current.classList.add('fixed');
+            setSecondStyle({position:'absolute', top:`4260px`});
+            setLifeStyle({postion:'fixed',top:null});
+
 
         }
 
-
-
-
-        
-
-        return ()=>{
-            if (introFlexDescriptionContainerRef.current){
-                observer.unobserve(introFlexDescriptionContainerRef.current);
-            }
-        }
 
     },[scrollY])
 
@@ -240,7 +222,7 @@ const IntroMain = () => {
                 </animated.div>
             </div>
             <div className='intro_flex_life_scroll_wrapper'>
-                <animated.div style={props7} ref={introFlexLifeContainerRef} className='intro_flex_life_container fixed hide'>
+                <animated.div style={{...lifeStyle,...props7}} ref={introFlexLifeContainerRef} className='intro_flex_life_container fixed hide'>
                     <div className='intro_flex_life_title_container'>
                         <img className='intro_flex_life_sun_img' src={sun} alt='sun'/>
                         <div className='intro_flex_life_title'>
@@ -255,7 +237,9 @@ const IntroMain = () => {
                         살아갈 수 있을 것 같은 무시무시한 자신감과 능력을 갖게 됩니다.
                     </div>
                     <div ref={lifeIllustrationRef} className='intro_flex_life_illustration_container'>
-                        <animated.div style={shipProps} className='ship_container'><Ship/></animated.div>
+                        <animated.div style={shipProps} className='ship_container'>
+                            <img className='intro_flex_life_sail_illustration' src={sail} alt='sail'/>
+                        </animated.div>
                         <div className='intro_flex_life_wave_illustration_container'>
                             <img className='intro_flex_life_wave_illustration' src={wave} alt='wave'/>
                         </div>
