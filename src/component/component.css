@@ -315,8 +315,22 @@
 }
 
 
+.ImgWrapper {
+    width : 100px;
+    height : 100px;
+
+}
 
 
+.SwipeGallery {
+    width : 80%;
+    height : 80%;
+
+}
+
+.SwipeItem:hover{
+    cursor : pointer;
+}
 
 /* square buttons */
 .rec.rec-arrow {
@@ -325,12 +339,20 @@
     visibility: hidden;
 }
 
+.SwipeGallery .jRFJkP.rec.rec-arrow{
+    visibility: visible;
+}
+
 /* hide disabled buttons */
 .rec.rec-arrow:disabled {
     width : 0px;
     height : 0px;
     visibility: hidden;
 }
+.SwipeGallery .rec.rec-arrow:disabled {
+    visibility: visible;
+}
+
 /* disable default outline on focused items */
 /* add custom outline on focused items */
 .rec-carousel-item:focus {
@@ -349,4 +371,7 @@
     padding : 0;
     margin-bottom : -5px;
 }
-
+.SwipeGallery .rec-carousel-wrapper {
+    height : 100%;
+    margin-bottom: 0px;
+}
