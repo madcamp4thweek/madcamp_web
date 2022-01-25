@@ -180,7 +180,8 @@
 }
 
 .ul_setting{
-    margin-left: 10%;
+    display:table;
+    margin: 0 auto;
 }
 .left{
     text-align: left;

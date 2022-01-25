@@ -1,5 +1,5 @@
 import React from 'react';
-import Dg from './Dg';
+import Dg from '../component/Dg';
 import './page.css';
 import IntroMain from '../component/IntroMain';
 import './Intro.css';
@@ -11,12 +11,13 @@ const Intro = ()=>{
     return(
         <>
             <div className='intro'>
-                 <IntroMain/>
-            </div>    
-            <div className='Dg'>
+                 {/* <IntroMain/> */}
+                 <div className='Dg'>
                 <Dg >
                 </Dg> 
             </div>
+            </div>    
+            
             
         </>
 
