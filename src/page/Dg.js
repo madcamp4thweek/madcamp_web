@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { useSpring, animated, config } from 'react-spring'
-import './IntroMain.css'
+import './Dg.css'
 import './Ipad.style.module.css'
 import Ipad from './Ipad.tsx'
 

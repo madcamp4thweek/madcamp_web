@@ -10,15 +10,14 @@ import './Intro.css';
 const Intro = ()=>{
     return(
         <>
-        <div className='intro'>
-            <IntroMain/>
-        </div>    
-
-
- 
-            <Dg>
-
-            </Dg> 
+            <div className='intro'>
+                 <IntroMain/>
+            </div>    
+            <div className='Dg'>
+                <Dg >
+                </Dg> 
+            </div>
+            
         </>
 
 
