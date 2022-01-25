@@ -55,6 +55,7 @@
 
 .small_title4{
     margin-top: 10%;
+    margin-bottom: 5%;
     font-size: 80px;
     font-weight: bold;
     color: #4D4D4D;
@@ -84,36 +85,16 @@
     color: #868686;
     text-align : center;
 }
-.temp2{
-    margin-top: 10%
-}
-
-.prof1{
+.prof{
     width: 380px;
     height: 500px;
-    margin-top: 5%;
-    margin-right: 3%
-}
-.prof2{
-    width: 380px;
-    height: 500px;
-    margin-top: 5%;
-    margin-left: 3%;
 }
 
-.inline{
-    display: inline;
-}
-.prof_career_start{
-    margin-top: 1%;
-    line-height: 160%;
-}
 .explain1{
     font-size: 30px;
     color: #000000;
     text-align : left;
     font-weight: bolder;
-    margin-left: 5%;
 }
 
 .explain2{
@@ -121,7 +102,6 @@
     color: #a5a5a5;
     text-align : left;
     font-weight: bold;
-    margin-left: 1%;
 }
 
 .explain3{
@@ -129,38 +109,50 @@
     color: #000000;
     text-align : left;
     font-weight: bold;
-    margin-right: 3%;
-    margin-left: 1%;
+}
+.ex_box{
+    display: flex;
+    width: 60%;
+    height: 30%;
+    justify-content:
+    space-evenly;
+}
+
+.bigbox{
+    display:flex;
+    justify-content: center;
+}
+
+.container1{
+    flex:1;
+    padding-left: 10%;
+}
+
+.container2{
+    flex:1;
+    padding-right: 10%;
 }
 
 .explain4{
     font-size: 20px;
     color: #000000;
-    text-align : left;
     font-weight: bold;
-    margin-left: 3%;
+    text-align: left;
 }
-
-
 
 .explain5{
     font-size: 20px;
     color: #a5a5a5;
-    text-align : left;
     font-weight: bold;
-    
-    margin-left: 1%;
+    text-align : left;
 }
 
 .explain6{
     font-size: 15px;
     color: #000000;
-    text-align : left;
     font-weight: bold;
-    margin-right: 8%;
-    margin-left: 1%;
+    text-align: left;
 }
-
  .madcamp_icon{
      margin-left:10%;
  }
@@ -189,10 +181,37 @@
      float:right;
      margin-top:5%;
      margin-right: 10%;
-
  }
-.clock{
+ 
+.env2{
+    left: 50%;
+    bottom: 47.5%;
+}
+
+.Ipad{
+    width: 80%;
+    overflow: hidden;
+    margin: 0 auto;
     position: relative;
+}
+
+.image{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    position: absolute;
+    left: 15%;
+    top: 20%;
+}
+
+.ul_setting{
+    margin-left: 10%;
+}
+.left{
+    text-align: left;
+}
+
+.clock{
     margin-top: 10%;
     right: 5%
 }

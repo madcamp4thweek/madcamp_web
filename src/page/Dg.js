@@ -1,21 +1,16 @@
 import React,{useState} from 'react'
 import { useSpring, animated, config } from 'react-spring'
 import './IntroMain.css'
+import './Ipad.style.module.css'
+import Ipad from './Ipad.tsx'
 
 const Dg = () => {
     return(
         <>
             <div className='small_title1'>
-                <span>
-                    <img className = "clock" src = "png/clock.png" alt = "시계" width = "150"></img>
-                </span>
-                <span>
-                    주당 80-100시간의
-                </span>
+                    주당 80-100시간의 <br/> 집중 개발.
             </div>
-            <div className = "small_title1">
-                집중 개발.
-            </div>
+            
             <div className = "description1">
                 몰입캠프에서는 관심있는 프로젝트 주제를 디자인하고 프로토<br/> 타입으로의 구현까지 개발의 전 과정을 경험할 수 있습니다.<br/> 약 4.5주간 4번의 프로젝트를 진행하며 하루종일 개발에  <br/> 몰두하는 즐거움을 느껴보세요. 
             </div>
@@ -46,145 +41,100 @@ const Dg = () => {
                 협업, 스크럼 뿐만 아니라 몰입캠프에서 지원해주는 야식쿠폰과 회식을 통해 <br/> 
                 당신의 소중한 동료들을 늘려보세요. 
             </div>
+            <div className = 'Ipad'>
+                <img className = 'Ipad' src = "png/ipad.png"></img>
+                <div className = 'image'>
+                    <Ipad></Ipad>
+                </div>
+            </div>
 
+            
             <div className = 'small_title4'>
                 든든한 <br/> 운영진과 후원사
             </div>
-            <div>
-                <span>
-                    <img className = 'prof1' src = "png/BK.png"></img>
-                </span>
-                <span>
-                    <img className = 'prof2' src = "png/SY.png"></img>
-                </span>
-            </div>
-            <span>
-                    <span>
-                        <span className='explain1'>
+            <div className='bigbox'>
+                <div className ='container1'>
+                    <img className = 'prof' src = "png/BK.png"></img>
+                    <div>
+                        <div className = 'explain1' style={{display: "inline"}}>
                             장병규
-                        </span>
-                        <span className='explain2'>
-                            크래프톤 이사회
-                        </span>
-                        <span className='explain3'>
+                        </div>
+                        <div className = 'explain2'style={{display: "inline"}}>
+                            크래트폰 이사회
+                        </div>
+                        <div className = 'explain3' style={{display: "inline", marginLeft: "3px"}}>
                             의장
-                        </span>
-                    </span>
-                    <span>
-                        <span className='explain1'>
+                        </div>
+                    </div>
+                    <ul className='ul_setting'>
+                        <li className='left'>
+                            <div className = 'explain4' style={{display: "inline"}}>4차산업혁명</div>
+                            <div className = 'explain5' style={{display: "inline"}}>위원장</div>
+                            <div className = 'explain6' style={{display: "inline"}}>(2007-2019)</div>
+                        </li>
+                        <li className='left'>
+                            <div className = 'explain4' style={{display: "inline"}}>본엔젤스</div>
+                            <div className = 'explain5' style={{display: "inline"}}>공동창업</div>
+                            <div className = 'explain6' style={{display: "inline"}}>(2008-2017)</div>
+                        </li>
+                        <li className='left'>
+                            <div className = 'explain4' style={{display: "inline"}}>블루홀</div>
+                            <div className = 'explain5' style={{display: "inline"}}>공동창업</div>
+                            <div className = 'explain6' style={{display: "inline"}}>(2007-2018)</div>
+                        </li>
+                        <li className='left'>
+                            <div className = 'explain4' style={{display: "inline"}}>네오위즈</div>
+                            <div className = 'explain5' style={{display: "inline"}}>공동창업</div>
+                            <div className = 'explain6' style={{display: "inline"}}>(1996-2005)</div>
+                        </li>
+                        <li className='left'>
+                            <div className = 'explain4' style={{display: "inline"}}>KAIST</div>
+                            <div className = 'explain5' style={{display: "inline"}}>전산학과</div>
+                            <div className = 'explain6' style={{display: "inline"}}>(입학 1991, 박사수료 1999)</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div className='container2'>
+                    <img className = 'prof' src = "png/SY.png"></img>
+                    <div>
+                        <div className = 'explain1' style={{display: "inline"}}>
                             류석영
-                        </span>
-                        <span className='explain2'>
+                        </div>
+                        <div className = 'explain2'style={{display: "inline"}}>
                             KAIST 전산학부
-                        </span>
-                        <span className='explain3'>
+                        </div>
+                        <div className = 'explain3' style={{display: "inline", marginLeft: "3px"}}>
                             학부장
-                        </span>
-                    </span>
-            </span>
-
-
-            <div id='carrer' className='prof_career_start'>
-                <div>
-                    <div className='inline explain4'>
-                            &middot; 4차산업혁명위원회 
                         </div>
-                        <div className = 'inline explain5'>
-                            위원장
-                        </div>
-                        <div className = 'inline explain6'>
-                            (2017-2019)
-                        </div>
-                        <div className='inline explain4'>
-                            &middot; KAIST 포용성 위원회 
-                        </div>
-                        <div className = 'inline explain5'>
-                            위원장
-                        </div>
-                        <div className = 'inline explain6'>
-                            (2017-2019)
-                        </div>
-                </div>
-                <div>
-                    <div className='inline explain4'>
-                            &middot; 본엔젤스
-                        </div>
-                        <div className = 'inline explain5'>
-                            공동창업
-                        </div>
-                        <div className = 'inline explain6'>
-                            (2008-2017)
-                        </div>
-                        <div className='inline explain4'>
-                            &middot; Sun Microsystems
-                        </div>
-                        <div className = 'inline explain5'>
-                            연구원
-                        </div>
-                        <div className = 'inline explain6'>
-                            (2005-2009)
-                        </div>
-                </div>
-           
-                <div>
-                    <div className='inline explain4'>
-                            &middot; 블루홀
-                        </div>
-                        <div className = 'inline explain5'>
-                            공동창업
-                        </div>
-                        <div className = 'inline explain6'>
-                            (2007-2018)
-                        </div>
-                        <div className='inline explain4'>
-                            &middot; Harvard University
-                        </div>
-                        <div className = 'inline explain5'>
-                            연구원
-                        </div>
-                        <div className = 'inline explain6'>
-                            (2001-2005)
-                        </div>
-                </div>
-                <div>
-                    <div className='inline explain4'>
-                            &middot; 네오위즈
-                        </div>
-                        <div className = 'inline explain5'>
-                            공동창업
-                        </div>
-                        <div className = 'inline explain6'>
-                            (2007-2018)
-                        </div>
-                        <div className='inline explain4'>
-                            &middot; KAIST 
-                        </div>
-                        <div className = 'inline explain5'>
-                            전산학과
-                        </div>
-                        <div className = 'inline explain6'>
-                            (입학 1991, 박사 2001)
-                        </div>
-                </div> 
-            </div>
-            
-            {/* <div>
-                <div className='inline'>
-                    a
-                </div>
-                <div className='inline'>
-                    b
+                    </div>
+                    <ul className='ul_setting'>
+                        <li className='left'>
+                            <div className = 'explain4' style={{display: "inline"}}>KAIST 포용성 위원회</div>
+                            <div className = 'explain5' style={{display: "inline"}}>위원장</div>
+                            <div className = 'explain6' style={{display: "inline"}}>(2017-)</div>
+                        </li>
+                        <li className='left'>
+                            <div className = 'explain4' style={{display: "inline"}}>Sun Microsystems</div>
+                            <div className = 'explain5' style={{display: "inline"}}>연구원</div>
+                            <div className = 'explain6' style={{display: "inline"}}>(2005-2009)</div>
+                        </li>
+                        <li className='left'>
+                            <div className = 'explain4' style={{display: "inline"}}>Harvard University</div>
+                            <div className = 'explain5' style={{display: "inline"}}>연구원</div>
+                            <div className = 'explain6' style={{display: "inline"}}>(2001-2005)</div>
+                        </li>
+                        <li className='left'>
+                            <div className = 'explain4' style={{display: "inline"}}>KAIST</div>
+                            <div className = 'explain5' style={{display: "inline"}}>전산학과</div>
+                            <div className = 'explain6' style={{display: "inline"}}>(입학 1991, 박사 2001)</div>
+                        </li>
+                    </ul>
                 </div>
             </div>
+
             
-            <div>
-                <div className='inline'>
-                    c
-                </div>
-                <div className='inline'>
-                    d
-                </div>
-            </div> */}
+        
             <div>
                 <img src = "png/mad.png"></img>
             </div>
