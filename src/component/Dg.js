@@ -5,6 +5,9 @@ import './Ipad.style.module.css'
 import AOS from "aos"
 import 'aos/dist/aos.css';
 import Ipad from './Ipad.tsx'
+import Card1 from './Card1'
+import Card2 from './Card2'
+import './Card.styles.module.css'
 
 
 const Dg = () => {
@@ -64,55 +67,41 @@ const Dg = () => {
                 </div>
             </div>
 
-            
+               
+        
+            <div>
+                <img src = "png/mad.png"></img>
+            </div>
+
             <div className = 'small_title4' data-aos='fade-up'>
                 든든한 <br/> 운영진과 후원사
             </div>
             <div className='bigbox' data-aos='fade-up'>
                 <div className ='container1' data-aos='fade-up'>
-                    <img className = 'prof' src = "png/BK.png"></img>
+                    <div className = 'prof'>
+                        <Card1></Card1>
+                    </div>
+                    
+                    {/* <img className = 'prof' src = "png/BK.png"></img> */}
                     <div>
                         <div className = 'explain1' style={{display: "inline"}}>
                             장병규
                         </div>
                         <div className = 'explain2'style={{display: "inline"}}>
-                            크래트폰 이사회
+                            크래프톤 이사회
                         </div>
                         <div className = 'explain3' style={{display: "inline", marginLeft: "3px"}}>
                             의장
                         </div>
                     </div>
-                    <ul className='ul_setting'>
-                        <li className='left'>
-                            <div className = 'explain4' style={{display: "inline"}}>4차산업혁명</div>
-                            <div className = 'explain5' style={{display: "inline"}}>위원장</div>
-                            <div className = 'explain6' style={{display: "inline"}}>(2007-2019)</div>
-                        </li>
-                        <li className='left'>
-                            <div className = 'explain4' style={{display: "inline"}}>본엔젤스</div>
-                            <div className = 'explain5' style={{display: "inline"}}>공동창업</div>
-                            <div className = 'explain6' style={{display: "inline"}}>(2008-2017)</div>
-                        </li>
-                        <li className='left'>
-                            <div className = 'explain4' style={{display: "inline"}}>블루홀</div>
-                            <div className = 'explain5' style={{display: "inline"}}>공동창업</div>
-                            <div className = 'explain6' style={{display: "inline"}}>(2007-2018)</div>
-                        </li>
-                        <li className='left'>
-                            <div className = 'explain4' style={{display: "inline"}}>네오위즈</div>
-                            <div className = 'explain5' style={{display: "inline"}}>공동창업</div>
-                            <div className = 'explain6' style={{display: "inline"}}>(1996-2005)</div>
-                        </li>
-                        <li className='left'>
-                            <div className = 'explain4' style={{display: "inline"}}>KAIST</div>
-                            <div className = 'explain5' style={{display: "inline"}}>전산학과</div>
-                            <div className = 'explain6' style={{display: "inline"}}>(입학 1991, 박사수료 1999)</div>
-                        </li>
-                    </ul>
+                    
                 </div>
 
                 <div className='container2' data-aos='fade-up'>
-                    <img className = 'prof' src = "png/SY.png"></img>
+                    <div className='prof'>
+                        <Card2></Card2>
+                    </div>
+                    {/* <img className = 'prof' src = "png/SY.png"></img> */}
                     <div>
                         <div className = 'explain1' style={{display: "inline"}}>
                             류석영
@@ -124,41 +113,16 @@ const Dg = () => {
                             학부장
                         </div>
                     </div>
-                    <ul className='ul_setting'>
-                        <li className='left'>
-                            <div className = 'explain4' style={{display: "inline"}}>KAIST 포용성 위원회</div>
-                            <div className = 'explain5' style={{display: "inline"}}>위원장</div>
-                            <div className = 'explain6' style={{display: "inline"}}>(2017-)</div>
-                        </li>
-                        <li className='left'>
-                            <div className = 'explain4' style={{display: "inline"}}>Sun Microsystems</div>
-                            <div className = 'explain5' style={{display: "inline"}}>연구원</div>
-                            <div className = 'explain6' style={{display: "inline"}}>(2005-2009)</div>
-                        </li>
-                        <li className='left'>
-                            <div className = 'explain4' style={{display: "inline"}}>Harvard University</div>
-                            <div className = 'explain5' style={{display: "inline"}}>연구원</div>
-                            <div className = 'explain6' style={{display: "inline"}}>(2001-2005)</div>
-                        </li>
-                        <li className='left'>
-                            <div className = 'explain4' style={{display: "inline"}}>KAIST</div>
-                            <div className = 'explain5' style={{display: "inline"}}>전산학과</div>
-                            <div className = 'explain6' style={{display: "inline"}}>(입학 1991, 박사 2001)</div>
-                        </li>
-                    </ul>
                 </div>
             </div>
 
-            
-        
-            <div>
-                <img src = "png/mad.png"></img>
-            </div>
+         
 
             <div className = "startup_start" data-aos='fade-up'>
-                반가워요 선배님들. <br/> 
-                세상을 바꿀 획기적인 스타트업 <br/> 
-                대표님들을 소개합니다.
+                반가워요 후배님들 <br/> 
+                세상을 바꿀 획기적인 <br/> 
+                우리 스타트업들을 <br/> 
+                소개할게요.
             </div>
             <div data-aos='fade-up' data-aos-offset='400'>
                 <img className = "startup_img" src= "png/startup_logo.png"></img> 

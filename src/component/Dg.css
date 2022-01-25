@@ -29,7 +29,6 @@
 
 
 .small_title4{
-    margin-top: 10%;
     margin-bottom: 5%;
     font-size: 80px;
     font-weight: bold;
@@ -47,7 +46,7 @@
 
 .description2{
     margin-left: 10%;
-    font-size: 25px;
+    font-size: 1.5vw;
     font-weight: bold;
     color: #868686;
     text-align : left;
@@ -100,12 +99,14 @@
 
 .container1{
     flex:1;
-    padding-left: 10%;
+    padding-left: 20%;
+    
 }
 
 .container2{
     flex:1;
-    padding-right: 10%;
+    padding-right: 20%;
+    
 }
 
 .explain4{
@@ -133,22 +134,23 @@
  }
 
  .startup_start{
-    margin-left: 10%;
     font-size: 40px;
     font-weight: bold;
     color: #000000;
-    line-height: 100%;
+    line-height: 120%;
     text-align : left;
     float: left;
     margin-top : 8%;
+    margin-left: 20%;
  }
  .startup_description{
      text-align: center;
      font-size: 25px;
      font-weight: bold;
      color: #969696;
-     float: right;
+     
      margin-top: 1%;
+     
  }
  .startup_img{
      width: 40%;

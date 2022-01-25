@@ -1,0 +1,48 @@
+.c {
+    position: absolute;
+    max-width: 500px;
+    max-height: 500px;
+    width: 380px;
+    height: 500px;
+    cursor: pointer;
+    will-change: transform, opacity;
+  }
+  
+  .front1,
+  .back1 {
+    background-size:cover;
+    box-shadow: 3px 3px 3px gray;
+    border-radius: 10px;
+  }
+
+  .front2,
+  .back2 {
+    background-size:cover;
+    box-shadow: 3px 3px 3px gray;
+    border-radius: 10px;
+  }
+  
+  .back1 {
+    background-image: url(/public/png/bk_career.png);
+  }
+  
+  .front1 {
+    background-image: url(/public/png/BK.png);
+  }
+
+  .back2 {
+    background-image: url(/public/png/sy_career2.png);
+  }
+  
+  .front2 {
+    background-image: url(/public/png/SY.png);
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    margin-left: 30%;
+  }
+  
