@@ -24,15 +24,15 @@ const Intro = ()=>{
     // },[scrollY])
     return(
         <>
-            {/* <div className='intro'>
+            <div className='intro'>
                  
-                 <IntroMain scrollY={scrollY}/> */}
+                 <IntroMain scrollY={scrollY}/>
                  
                  <div style={{position:'absolute', top:`calc(100vh + 8029px)`, width:'100%'}} className='Dg'>
                     <Dg scrollY={scrollY} >
                     </Dg> 
                 </div>
-            {/* </div>     */}
+            </div>    
             
             
         </>

@@ -23,19 +23,19 @@
   }
   
   .back1 {
-    background-image: url(/public/png/bk_career.png);
+    background-image: url(/public/png/BK.png);
   }
   
   .front1 {
-    background-image: url(/public/png/BK.png);
+    background-image: url(/public/png/bk_career.png);
   }
 
   .back2 {
-    background-image: url(/public/png/sy_career2.png);
+    background-image: url(/public/png/SY.png);
   }
   
   .front2 {
-    background-image: url(/public/png/SY.png);
+    background-image: url(/public/png/sy_career2.png);
   }
   
   .container {
