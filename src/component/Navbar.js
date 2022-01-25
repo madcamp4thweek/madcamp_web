@@ -6,9 +6,9 @@ import {Link} from 'react-router-dom';
 
 const menu = [
     {name :"소개", address:'/intro'},
-    {name:"경험", address:'exp'},
-    {name:"질문", address:'faq'},
-    {name:"공지사항", address:'notice'},
+    {name:"경험", address:'/exp'},
+    {name:"질문", address:'/faq'},
+    {name:"공지사항", address:'/notice'},
 ];
 
 const Navbar = ()=>{
@@ -23,8 +23,8 @@ const Navbar = ()=>{
                 </Link>
             </div>
             <div className='navbar_menu'>
-                {menu.map((item)=>(
-                    <Link to={item.address} className='navbar_item'>
+                {menu.map((item,idx)=>(
+                    <Link key={idx} to={item.address} className='navbar_item'>
                         {item.name}
                     </Link>
                 ))}

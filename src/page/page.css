@@ -1,1 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Readex+Pro:wght@500;600&display=swap');
+
+.intro{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight:700;
+ 
+}
+
+/* .intro_main_title {
+    font-weight:700;
+}
+.intro_main_description{
+    font-weight:700;
+}
+.intro_flex_title{
+    font-weight:700;
+}
+.intro_flex_description_title{
+    font-weight:700;
+}
+.intro_flex_description_detail{
+    font-weight:700;
+}
+.intro_plan_link{
+    font-weight:700;
+}
+.intro_flex_life_title{
+    font-weight:700;
+} */

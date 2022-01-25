@@ -1,4 +1,6 @@
 .intro{
-    color:red;
-    font-size:100px;
+    width:100%;
+    height:1000vh;
+
+    /* box-sizing:border-box; */
 }

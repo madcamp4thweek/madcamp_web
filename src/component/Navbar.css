@@ -1,13 +1,17 @@
 .navbar{
-    height:80px;
+    position:fixed;
+    flex-shrink: 0;
+    height:60px;
     width:100%;
     box-sizing:border-box;
     display:flex;
     z-index:999;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba( 255, 255, 255, 0.5 );
-    padding: 10px 10%;
+
+    background-color: rgba( 255, 255, 255 );
+    padding:10px 10%;
+
 }
 
 
@@ -26,8 +30,12 @@
 .navbar_item{
     text-decoration:none;
     color:black;
-    padding:20px;
+    padding:20px 20px 10px 20px;
     font-size:1rem;
+}
+
+.navbar_item:hover {
+    text-decoration: underline;
 }
 
 .navbar_apply_button{
@@ -41,6 +49,10 @@
         text-decoration: none;
         display: inline-block;
         font-size: 15px;
-        margin: 10px;
+        margin: 15px 10px 5px 10px;
         cursor: pointer;
+}
+
+.navbar_apply_button:hover {
+    text-decoration: underline;
 }
