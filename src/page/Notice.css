@@ -1,0 +1,29 @@
+.notice_page{
+    padding-top:60px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notice_title{
+    margin-top:8vh;
+    font-size:40px;
+    font-weight:700;
+}
+
+.notice_board{
+    text-align: center;
+    width:60%;
+    margin-top:5vh;
+    border-top: 2px solid  black;
+}
+
+.notice_index{
+    padding:5vh;
+    width:60%;
+    text-align: center;
+
+}
+.notice_index_item{
+    padding:10px;
+}
