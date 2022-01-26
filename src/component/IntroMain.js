@@ -210,12 +210,16 @@ const IntroMain = ({scrollY,setDgContainerOffset,dgContainerOffset}) => {
             setSecondStyle({position:'fixed', top:null});
             
             introFlex.current.classList.add('fixed');
+            introFlex.current.classList.add('hide');
+
             introFlexLifeContainerRef.current.classList.remove('fixed');
 
-        }else if(scrollY<dgContainerOffset && dgContainerOffset!==8029){
+        }else if(dgContainerOffset!==8029 && dgContainerOffset-500<scrollY && scrollY<dgContainerOffset){
             introFlexLifeContainerRef.current.classList.add('fixed');
             setSecondStyle({position:'absolute', top:`4760px`});
             introFlex.current.classList.remove('fixed');
+            introFlex.current.classList.remove('hide');
+
             
             setLifeStyle({postion:'fixed',top:null});
         }
