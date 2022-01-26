@@ -25,7 +25,6 @@ const Intro = ()=>{
     return(
         <>
             <div className='intro'>
-                 
                  <IntroMain scrollY={scrollY} setDgContainerOffset={setDgContainerOffset} dgContainerOffset={dgContainerOffset}/>
                  
                  <div style={{position:'absolute', top:`calc(100vh + ${dgContainerOffset}px)`, width:'100%'}} className='Dg'>

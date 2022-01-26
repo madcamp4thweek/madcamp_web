@@ -1,8 +1,8 @@
 .container > div {
   cursor: pointer;
   position: absolute;
-  width: 70%;
-  height: 60%;
+  width: 54vw;
+  height: 56vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,6 +13,7 @@
   text-shadow: 0px 2px 40px #00000020, 0px 2px 5px #00000030;
   -webkit-user-select: none;
   user-select: none;
+  left: 5%;
 }
 
 .image{
