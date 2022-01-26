@@ -22,8 +22,9 @@ function App() {
           <Route exact path='/' element = {<Main />}/>
           <Route exact path='/intro' element = {<Intro />} />
           <Route exact path='/exp' element = {<Exp />} />
-          <Route exact path='/faq' element = {<FAQ />} />
-          <Route exact path='/notice' element = {<Notice/>}/>
+
+          <Route exact path='/faq' element = {<Faq />} />
+          <Route  exact path='/notice/*' element = {<Notice/>}/>
           <Route exact path='/apply' element = {<Apply/>}/>
         </Routes>
         {/* </div> */}
