@@ -12,7 +12,7 @@ export function useScroll(handleScroll) {
 
   useEffect(() => {
     
-    window.addEventListener("scroll", throttle(listener,50));
+    window.addEventListener("scroll", throttle(listener,0));
     return () => {
       window.removeEventListener("scroll", listener);
     };

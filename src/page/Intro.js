@@ -13,7 +13,7 @@ import useScroll from '../hook/useScroll';
 const Intro = ()=>{
 
     const {scrollY}= useScroll();
-    const [dgContainerStyle, setDgContainerStyle]= useState(null);
+    const [dgContainerOffset, setDgContainerOffset]= useState(8029);
 
     // useEffect(()=>{
     //     if (7969<scrollY){
@@ -26,9 +26,9 @@ const Intro = ()=>{
         <>
             <div className='intro'>
                  
-                 <IntroMain scrollY={scrollY}/>
+                 <IntroMain scrollY={scrollY} setDgContainerOffset={setDgContainerOffset} dgContainerOffset={dgContainerOffset}/>
                  
-                 <div style={{position:'absolute', top:`calc(100vh + 8029px)`, width:'100%'}} className='Dg'>
+                 <div style={{position:'absolute', top:`calc(100vh + ${dgContainerOffset}px)`, width:'100%'}} className='Dg'>
                     <Dg scrollY={scrollY} >
                     </Dg> 
                 </div>
