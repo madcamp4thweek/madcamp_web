@@ -64,18 +64,18 @@ const Screen = (props)=>{
 
 
     return(
-        <div className="ScreenWrapper">
-            <div className="ScreenLeft">
-                <div className="ScreenHeader">
-                    <div className="ScreenTitle">
-                        <div className="TitleCircleWrapper">
-                            <div className="TitleCircle Red"></div>
-                            <div className="TitleCircle Yellow"></div>
-                            <div className="TitleCircle Green"></div>
+        <div className="HW_ScreenWrapper">
+            <div className="HW_ScreenLeft">
+                <div className="HW_ScreenHeader">
+                    <div className="HW_ScreenTitle">
+                        <div className="HW_TitleCircleWrapper">
+                            <div className="HW_TitleCircle Red"></div>
+                            <div className="HW_TitleCircle Yellow"></div>
+                            <div className="HW_TitleCircle Green"></div>
                         </div>
-                        <div className="TitleText">MadCamp Review</div>
+                        <div className="HW_TitleText">MadCamp Review</div>
                     </div>
-                    <div className="ScreenItems">
+                    <div className="HW_ScreenItems">
                         <Carousel 
                             ref = {carouselRef}
                             showEmptySlots
@@ -84,7 +84,7 @@ const Screen = (props)=>{
                             itemsToShow={3}>
                             {data.map((item , idx)=>{
                                 return(
-                                    <div key={idx} className={`ItemWrapper ${idx===currIdx?" selected":""}`} onClick={()=>setCurrIdx(idx)}>
+                                    <div key={idx} className={`HW_ItemWrapper ${idx===currIdx?" selected":""}`} onClick={()=>setCurrIdx(idx)}>
                                         <ReactPlayer style={{borderRadius : '10px', borderWidth : '5px', borderColor:'#00B17B'}} key={idx} width ="160px" height="90px" url={item.url}/>
                                     </div>
                                 )
@@ -92,7 +92,7 @@ const Screen = (props)=>{
                         </Carousel>
                     </div>
                 </div>
-                <div className="ScreenBody">
+                <div className="HW_ScreenBody">
                 <ReactPlayer
                     volume = {Number(mute)}
                     playing = {pause}
@@ -103,34 +103,34 @@ const Screen = (props)=>{
                     />
 
                 </div>
-                <div className="ScreenFooter">
-                    <div className="FooterLeft">
-                        <div className="FooterItem" onClick={()=>setMute(!mute)}>
+                <div className="HW_ScreenFooter">
+                    <div className="HW_FooterLeft">
+                        <div className="HW_FooterItem" onClick={()=>setMute(!mute)}>
                             <Mic style={{flex:1}} width="70%" />
-                            <div className="FooterText">{mute?"Mute":"Unmute"}</div>
+                            <div className="HW_FooterText">{mute?"Mute":"Unmute"}</div>
                         </div>
-                        <div className="FooterItem" onClick={()=>setPause(!pause)}>
+                        <div className="HW_FooterItem" onClick={()=>setPause(!pause)}>
                             <Video style={{flex:1}} width="100%"  />
-                            <div className="FooterText">{pause?"Pause":"Play"}</div>
+                            <div className="HW_FooterText">{pause?"Pause":"Play"}</div>
                         </div>
                     </div>
-                    <div className="FooterMid">
-                        <div className="FooterMidItem">
+                    <div className="HW_FooterMid">
+                        <div className="HW_FooterMidItem">
                             <People style={{flex:1}} width="100%" />
-                            <div className="FooterText">People</div>
+                            <div className="HW_FooterText">People</div>
                         </div>
-                        <div className="FooterMidItem" >
+                        <div className="HW_FooterMidItem" >
                             <Chat style={{flex:1}} width="90%" />
-                            <div className="FooterText">Chat</div>
+                            <div className="HW_FooterText">Chat</div>
                         </div>
-                        <div className="FooterMidItem" >
+                        <div className="HW_FooterMidItem" >
                             <Share style={{flex:1}} width="100%"  />
-                            <div className="FooterText">Share</div>
+                            <div className="HW_FooterText">Share</div>
                         </div>
                     </div>
-                    <div className="FooterRight">
-                        <div className="EndButton Red" onClick={()=>props.setOpen(false)}>
-                            <div className="EndText">End</div>
+                    <div className="HW_FooterRight">
+                        <div className="HW_EndButton Red" onClick={()=>props.setOpen(false)}>
+                            <div className="HW_EndText">End</div>
                         </div>
 
                     </div>
@@ -138,21 +138,21 @@ const Screen = (props)=>{
                 </div>
             </div>
 
-            <div className="ScreenRight">
-                <div  className="PeopleTitle">People ({data.length})</div>
+            <div className="HW_ScreenRight">
+                <div  className="HW_PeopleTitle">People ({data.length})</div>
                 <div>
                     {data.map((item, idx)=>{
                         return(
-                            <div className={`PeopleItem ${idx===currIdx?" selected":""}`}>
-                                <div key={idx} className="PeopleWrapper" onClick={()=>peopleClick(idx)}>
-                                    <div className="PeopleProfile" style={{backgroundColor : item.color}}>
-                                        <div className="PeopleUnivText">{item.univ[0].toUpperCase()}</div>
+                            <div className={`HW_PeopleItem ${idx===currIdx?" selected":""}`}>
+                                <div key={idx} className="HW_PeopleWrapper" onClick={()=>peopleClick(idx)}>
+                                    <div className="HW_PeopleProfile" style={{backgroundColor : item.color}}>
+                                        <div className="HW_PeopleUnivText">{item.univ[0].toUpperCase()}</div>
                                     </div>
-                                    <div className="PeopleNameText">{item.univ}</div>
-                                    <div className="PeopleNameText">{item.name}</div>
+                                    <div className="HW_PeopleNameText">{item.univ}</div>
+                                    <div className="HW_PeopleNameText">{item.name}</div>
                                 </div>
                                 {(idx===currIdx)&&
-                                    <animated.div className="PeopleDetail" style={styles}>
+                                    <animated.div className="HW_PeopleDetail" style={styles}>
                                         {item.detail}
                                     </animated.div>  
                                 }

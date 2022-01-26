@@ -18,11 +18,11 @@ export default function Model(props) {
   const open = props.open;
   const setOpen = props.setOpen;
 
-  const { rotate, position} = useSpring({ rotate:open?-0.02:Math.PI/2-0.01, position :open?[0,0,-6]:[0,0,-4.5] });
+  const { rotate, position} = useSpring({ rotate:open?-0.02:Math.PI/2-0.01, position :open?[0,0,-7]:[0,0,-6] });
 
   useFrame((state)=>{
 
-    state.camera.position.lerp(vec.set(0, open?-50:-60,open?0.01:0.01),0.1);
+    state.camera.position.lerp(vec.set(0, open?-55:-60,open?0.01:0.01),0.1);
     state.camera.lookAt(0,0,0);
 
   });

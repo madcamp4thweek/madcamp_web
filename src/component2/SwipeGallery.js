@@ -24,24 +24,24 @@ const Item = (props) => {
         props.setFlipped(!props.flipped);
     }
     return(
-        <div className="SwipeItem" onClick={()=>itemFlip()}>
-            <animated.div className={`SwipeCard ${selected?'top':''}`}  style={{background: `url(${props.item.url})`,backgroundSize : 'cover',  scale:scale, opacity: opacity.to(o => 1 - o), transform}} key={props.idx}>
+        <div className="HW_SwipeItem" onClick={()=>itemFlip()}>
+            <animated.div className={`HW_SwipeCard ${selected?'top':''}`}  style={{background: `url(${props.item.url})`,backgroundSize : 'cover',  scale:scale, opacity: opacity.to(o => 1 - o), transform}} key={props.idx}>
             </animated.div>
-            <animated.div className="SwipeCard back" style={{ opacity, transform, rotateX: '180deg',background: `url(${props.item.url})`, backgroundSize : 'cover'}}>
-                <div className="SwipeInfo">
-                    <div className="InfoTextWrapper">
-                        <div className="InfoTitle">{props.item.name}</div>
-                        <div className="InfoDetail">{props.item.detail}</div>
+            <animated.div className="HW_SwipeCard back" style={{ opacity, transform, rotateX: '180deg',background: `url(${props.item.url})`, backgroundSize : 'cover'}}>
+                <div className="HW_SwipeInfo">
+                    <div className="HW_InfoTextWrapper">
+                        <div className="HW_InfoTitle">{props.item.name}</div>
+                        <div className="HW_InfoDetail">{props.item.detail}</div>
                     </div>
-                    <div className="InfoGithubWrapper">
+                    <div className="HW_InfoGithubWrapper">
                         {props.item.participants.map((id, idx)=>{
                             return(
-                                <div className="InfoDetail">{id}</div>
+                                <div className="HW_InfoDetail">{id}</div>
                             );
                         })}
-                        <div className="InfoDetail Blue" onClick={()=>window.open(props.item.github,'_blank')}>자세히 보기 ></div>
+                        <div className="HW_InfoDetail Blue" onClick={()=>window.open(props.item.github,'_blank')}>자세히 보기 ></div>
                     </div>
-                    <div className="InfoBackground"></div>
+                    <div className="HW_InfoBackground"></div>
                 </div>
             </animated.div>
         </div>
@@ -106,7 +106,7 @@ const SwipeGallery = () => {
 
     } ];
     return(
-        <div className="SwipeGallery" >
+        <div className="HW_SwipeGallery" >
         <Carousel
         itemsToScroll={1}
         ref = {carouselRef}
