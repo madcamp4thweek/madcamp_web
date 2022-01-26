@@ -22,7 +22,7 @@ export default function Model(props) {
 
   useFrame((state)=>{
 
-    state.camera.position.lerp(vec.set(0, open?-50:-50,open?0.01:0.01),0.1);
+    state.camera.position.lerp(vec.set(0, open?-50:-60,open?0.01:0.01),0.1);
     state.camera.lookAt(0,0,0);
 
   });

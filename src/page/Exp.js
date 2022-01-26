@@ -21,7 +21,7 @@ const Exp = ()=>{
     return(
         <div style={{display : 'flex', flexDirection : 'column', alignItems : 'center' }}>
             <div style={{width : "100%", height : "100vh" }}>
-                <Canvas  style={{width:"100%", height : "100%"}} dpr={[1, 2]} camera={{ position: [0,-50,10], fov: 25, near: 0.1, far: 501 }}>
+                <Canvas  style={{width:"100%", height : "100%"}} dpr={[1, 2]} camera={{ position: [0,-50,10], fov: 25, near: 0.1, far: 500 }}>
                     <Suspense fallback={null}>
                         <Mac open={open} setOpen={setOpen} />
                     </Suspense>
@@ -32,7 +32,7 @@ const Exp = ()=>{
                     style={{opacity : opacity, transform : transform }}>
                         {`몰입의\n경험이란\n바로 이런 것.`}</animated.div>
             </div>
-            <div style={{width : "100%", height : "100vh", overflow : 'auto' }}>
+            <div style={{width : "100%", height : "100vh", overflow : 'auto', display:'flex', alignItems:'center' }}>
                 <SwipeGallery />
             </div>
         </div>

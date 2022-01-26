@@ -42,7 +42,7 @@ const Screen = (props)=>{
             "name" : "김폴",
             "univ" : "POSTECH",
             "url":"etc/jaewoo1.mp4",
-            "detail" : "나는 재우 화석",
+            "detail" : "나는 재우 화석 나는 재우 화석나는 재우 화석나는 재우 화석나는 재우 화석나는 재우 화석나는 재우 화석나는 재우 화석",
             "color" : "#58BB68"
         },
 
