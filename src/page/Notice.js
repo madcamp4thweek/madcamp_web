@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import './page.css';
 import './Notice.css';
 
@@ -72,6 +72,26 @@ const notices=[{
 
 const Notice = ()=>{
     
+    const [notices0,setNotices]= useState(null);
+
+    // useEffect(()=>{
+    //     const fetchNotices = async()=>{
+    //         try{
+    //             setNotices(null);
+    //             const response = await axios.get(
+    //                 'https://jsonplaceholder.typicode.com/users'
+    //             );
+                
+    //             const data = response.data;
+    //             //가공하기
+    //             setNotices(data);
+    //         }catch{
+    //             setNotices(null);
+    //         }
+    //     }
+    //     fetchNotices();
+    // })
+
 
     return(
         <div className='notice_page'>

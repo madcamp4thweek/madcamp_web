@@ -1,0 +1,21 @@
+.notice_page{
+    padding-top:60px;
+    display:flex;
+    flex-direction: column;
+
+}
+
+.notice_one_title{
+    margin-top:8vh;
+    font-size:40px;
+    font-weight:700;
+    width:60%;
+
+}
+
+.notice_one_board{
+    width:60%;
+    height:30vh;
+    margin-top:5vh;
+    border-top: 2px solid  black;
+}

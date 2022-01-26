@@ -15,19 +15,20 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+
       <Router>
-        {/* <div className='main_structure'> */}
         <Navbar/>
         <Routes>
           <Route exact path='/' element = {<Main />}/>
           <Route exact path='/intro' element = {<Intro />} />
           <Route exact path='/exp' element = {<Exp />} />
-
-          <Route exact path='/faq' element = {<Faq />} />
-          <Route  exact path='/notice/*' element = {<Notice/>}/>
+          <Route exact path='/faq' element = {<FAQ />} />
+          <Route  exact path='/notice' element = {<Notice/>}>
+            <Route path=":noticeId" />
+          </Route>
           <Route exact path='/apply' element = {<Apply/>}/>
         </Routes>
-        {/* </div> */}
+
       </Router>
       
     </div>
