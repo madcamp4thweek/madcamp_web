@@ -109,9 +109,6 @@ const Notice = ()=>{
             <NoticeIndex number={10}/>
 
 
-            <Routes>
-                <Route path="/notice/:noticeid" element={OneNotice} />
-            </Routes>
         </div>
         
     );

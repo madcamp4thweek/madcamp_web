@@ -7,15 +7,38 @@
 
 .notice_one_title{
     margin-top:8vh;
-    font-size:40px;
+    font-size:30px;
     font-weight:700;
     width:60%;
+    border-bottom: 2px solid  black;
+    padding:2vh 0;
 
 }
+.notice_one_created_at{
+    padding:1vh 0 ;
+    width:60%;
+    text-align: end;
+}
 
-.notice_one_board{
+.notice_one_content{
     width:60%;
     height:30vh;
+    font-size:20px;
     margin-top:5vh;
-    border-top: 2px solid  black;
+
+}
+.notice_link_container{
+    display:flex;
+    justify-content: flex-end;
+    position:relative;
+    width:60%;
+    padding:0 50px;
+}
+.notice_link_container a{
+    text-decoration: none;
+    color: #4d4d4d;
+    width: 50px;
+    /* background-color:#4d4d4d; */
+    text-align: center;
+    /* border-radius: 10px; */
 }

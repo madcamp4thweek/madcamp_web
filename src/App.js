@@ -7,6 +7,7 @@ import Exp from './page/Exp';
 import FAQ from './page/Faq.js';
 import Apply from './page/Apply';
 import Notice from './page/Notice';
+import OneNotice from './component/OneNotice';
 import Navbar from './component/Navbar';
 
 import './App.css';
@@ -23,9 +24,8 @@ function App() {
           <Route exact path='/intro' element = {<Intro />} />
           <Route exact path='/exp' element = {<Exp />} />
           <Route exact path='/faq' element = {<FAQ />} />
-          <Route  exact path='/notice' element = {<Notice/>}>
-            <Route path=":noticeId" />
-          </Route>
+          <Route  exact path='/notice' element = {<Notice/>}/>
+          <Route path='/notice/:noticeId' element={<OneNotice/>}/>
           <Route exact path='/apply' element = {<Apply/>}/>
         </Routes>
 
