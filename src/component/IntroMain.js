@@ -16,6 +16,8 @@ import moon from '../img/moon.gif';
 
 
 
+
+
 const useFadeIn=()=>{
     const [isFadedIn,setFadedIn] = useState(false);
     const props = useSpring({from:{opacity:0}, opacity:isFadedIn ? 1:0});
@@ -29,18 +31,38 @@ const useMoveHorizontal= ()=>{
     return [positionX,setPositionX,props];
 };
 
-
-
-
-
-
-const IntroMain = ({scrollY}) => {
-
+const onScroll= (setStdScroll,scrollY,stdScroll,setStdSet,entries)=>{
+    const entry = entries[0];
     
+    if (entry.intersectionRatio>0 && !entry.target.classList.contains('fix_special') && stdScroll===0 ){
+        entry.target.classList.add('fix_special');
+        // setStdScroll(scrollY);
+        setStdSet(true);
+        
+        console.log("all night"
+        );
+        
+        
+    }   
+
+
+}
+
+
+
+
+const IntroMain = ({scrollY,setDgContainerOffset,dgContainerOffset}) => {
+
+    const [stdSet,setStdSet] = useState(false);
+    const [stdScroll,setStdScroll] = useState(0);
+    const [stdScroll2,setStdScroll2] = useState(0);
+
 
     const [cropRatio, setCropRatio] = useState(100);
     const [secondStyle,setSecondStyle] = useState(null);
     const [lifeStyle, setLifeStyle]= useState(null);
+    const [codeImageStyle,setCodeImageStyle] = useState(null);
+    const [introFlexDescriptionContainerStyle,setIntroFlexDescriptionContainerStyle] = useState(null);
 
 
     const [isFadedIn,setFadedIn ,props]= useFadeIn();
@@ -55,13 +77,30 @@ const IntroMain = ({scrollY}) => {
 
     const introMain = useRef(null);
     const introFlex = useRef(null);
+    const arrowTitleContainer = useRef(null);
+
     const introFlexDescriptionContainerRef = useRef(null);
     const introFlexLifeContainerRef = useRef(null);
     const lifeIllustrationRef = useRef(null);
 
+    
 
-    useEffect(()=>{ 
+
+    useEffect(()=>{
+        
         console.log(scrollY);
+
+        const io = new IntersectionObserver((entries)=>{
+            return onScroll(setStdScroll,scrollY,stdScroll,setStdSet,entries)
+        }
+            
+            ,{
+            rootMargin: '0% 0% -90% 0%',
+            threshold:0
+        });
+        io.observe(introFlexDescriptionContainerRef.current);
+
+
 
 
         lifeIllustrationRef.current.addEventListener('mousemove',throttle(e=>{
@@ -72,8 +111,8 @@ const IntroMain = ({scrollY}) => {
 
 
 
-
         if ( 500<scrollY && scrollY<1500){
+            setFadedIn5(true);
             setCropRatio(33*(1-(scrollY-500)/1000));
         }else if (scrollY>1500 && cropRatio!==0) {
             setCropRatio(0);
@@ -82,94 +121,161 @@ const IntroMain = ({scrollY}) => {
         }
 
         // 하는
-        if (2200<scrollY && scrollY<3200  && !isFadedIn){
+        if (1700<scrollY && scrollY<2200  && !isFadedIn){
              setFadedIn(true);
-        }else if ((scrollY<2200 ) && isFadedIn){
+        }else if ((scrollY<1700 ) && isFadedIn){
             setFadedIn(false);
         }
 
         //경험  // intro main fix remove add 
-        if (3200<scrollY && scrollY<4200 &&!isFadedIn2  ){
+        if (2200<scrollY && scrollY<2700 &&!isFadedIn2  ){
             setFadedIn2(true);
             introMain.current.classList.remove('fixed');
-       }else if ((scrollY<3200)&&isFadedIn2){
+       }else if ((scrollY<2200)&&isFadedIn2){
            setFadedIn2(false);
            introMain.current.classList.add('fixed');
        }
 
-       //코드 사진
-       if (4200<scrollY && scrollY<4700 &&!isFadedIn3  ){
+       //코드 사진 화살표
+       if (3000<scrollY && scrollY<3400 &&!isFadedIn3  ){
             setFadedIn3(true);
             setFadedIn4(true);
-            console.log("why");
 
-        }else if ((scrollY<4200)&&isFadedIn3){
+        }else if ((scrollY<3000)&&isFadedIn3){
             setFadedIn3(false);
             setFadedIn4(false);
-
-            
         }
+
+
         
 
         //fix 해제
-        if (4700<scrollY && scrollY<5400){
+        if (4700<scrollY && scrollY<5400 && introFlex.current.classList.contains('fixed')){
             introFlex.current.classList.remove('fixed');
-            setSecondStyle({position:'absolute', top:`4760px`})
-        }else if(scrollY<4700){
+            setSecondStyle({position:'absolute', top:`4760px`});
+        }else if(scrollY<4720){
             introFlex.current.classList.add('fixed');
-            setSecondStyle({position:'fixed', top:null})
-        }
-
-        if( 5500<scrollY && scrollY<5700 ){
+            setSecondStyle({position:'fixed', top:null});
         }
 
         
 
-        if (5700<scrollY && scrollY<6200 &&!isFadedIn5 ){
-            setFadedIn5(true);
 
-        }else if ((scrollY<5700)&&isFadedIn5){
-            setFadedIn5(false);
-
+        //title arrow container fix 설정
+        if( 4930<scrollY && scrollY<5230 ){
+            arrowTitleContainer.current.classList.add('fix_special');
+        }else if (scrollY<4930){
+            arrowTitleContainer.current.classList.remove('fix_special');
         }
+
+        if(6600<scrollY && scrollY<7200){
+            setFadedIn5(false);
+        }else if( 6000<scrollY && scrollY<6600){
+            setFadedIn5(true);
+        }
+
         
-
-        if (6500<scrollY ){
-            setFadedIn5(false);
-        }else if (scrollY<6500 && scrollY>6200){
-            setFadedIn5(true);
+        console.log(
+            "stdScroll",stdScroll,stdScroll2
+        )
+        //handle all night long
+        if ( stdScroll!==0 &&stdScroll<scrollY ){
+            introFlexDescriptionContainerRef.current.classList.remove('fix_special');
+            setIntroFlexDescriptionContainerStyle({position:'fixed', top:'10%'});
+            
+            
+            // setCodeImageStyle({position:'fixed', top:`calc(100vh - 2*${scrollY-4700}px )`, left :'50%', transform:'translateX(-50%)'});
+        }else if (stdScroll!==0 && stdScroll>scrollY){
+            introFlexDescriptionContainerRef.current.classList.add('fix_special');
+            setIntroFlexDescriptionContainerStyle({position:'static', top:null});
         }
 
-        if (7000<scrollY){
-            introFlexDescriptionContainerRef.current.classList.remove('fixed');
-            setFadedIn6(true);
+
+        if (scrollY>stdScroll2 && stdScroll2!==0){
+            console.log('why not executed');
+            setFadedIn5(false);
+
+            setFadedIn6(false);
             introFlexLifeContainerRef.current.classList.remove('hide');
             setFadedIn7(true);
-        }else if( scrollY<7000){
-            introFlexDescriptionContainerRef.current.classList.add('fixed');
-            setFadedIn6(false);
-            introFlexLifeContainerRef.current.classList.add('hide');
+        }else if (scrollY<stdScroll2 && stdScroll2!==0){
             setFadedIn7(false);
+            
+            introFlexLifeContainerRef.current.classList.add('hide');
+            setFadedIn6(false);
         }
-
-        if (7969<scrollY){
+    
+        if(scrollY>dgContainerOffset && dgContainerOffset!==8029){
+            setLifeStyle({position:'absolute',top:`${dgContainerOffset}px`});
             setSecondStyle({position:'fixed', top:null});
-            // setFadedIn7(false);
-            setLifeStyle({position:'absolute',top:'8029px'});
+            
+            introFlex.current.classList.add('fixed');
             introFlexLifeContainerRef.current.classList.remove('fixed');
-        }else if( 7500<scrollY && scrollY<=7969){
-            // setFadedIn7(true);
+
+        }else if(scrollY<dgContainerOffset && dgContainerOffset!==8029){
             introFlexLifeContainerRef.current.classList.add('fixed');
-            setSecondStyle({position:'absolute', top:`4260px`});
+            setSecondStyle({position:'absolute', top:`4760px`});
+            introFlex.current.classList.remove('fixed');
+            
             setLifeStyle({postion:'fixed',top:null});
-
-
         }
+
+        // if (5700<scrollY && scrollY<6200 &&!isFadedIn5 ){
+        //     setFadedIn5(true);
+
+        // }else if ((scrollY<5700)&&isFadedIn5){
+        //     setFadedIn5(false);
+
+        // }
+        
+
+        // if (6500<scrollY ){
+        //     setFadedIn5(false);
+        // }else if (scrollY<6500 && scrollY>6200){
+        //     setFadedIn5(true);
+        // }
+
+        // if (7000<scrollY){
+        //     introFlexDescriptionContainerRef.current.classList.remove('fixed');
+        //     setFadedIn6(true);
+        //     introFlexLifeContainerRef.current.classList.remove('hide');
+        //     setFadedIn7(true);
+        // }else if( scrollY<7000){
+        //     introFlexDescriptionContainerRef.current.classList.add('fixed');
+        //     setFadedIn6(false);
+        //     introFlexLifeContainerRef.current.classList.add('hide');
+        //     setFadedIn7(false);
+        // }
+
+        // if (7969<scrollY){
+        //     setSecondStyle({position:'fixed', top:null});
+        //     // setFadedIn7(false);
+        //     setLifeStyle({position:'absolute',top:'8029px'});
+        //     introFlexLifeContainerRef.current.classList.remove('fixed');
+        // }else if( 7500<scrollY && scrollY<=7969){
+        //     // setFadedIn7(true);
+        //     introFlexLifeContainerRef.current.classList.add('fixed');
+        //     setSecondStyle({position:'absolute', top:`4260px`});
+        //     setLifeStyle({postion:'fixed',top:null});
+
+
+        // }
 
 
     },[scrollY])
 
+    useEffect(()=>{
+        if (stdSet){
+            setStdScroll(scrollY);
+        }
+    },[stdSet]);
 
+    useEffect(()=>{
+        if (stdScroll!==0){
+            setStdScroll2(stdScroll+700);
+            setDgContainerOffset(stdScroll+1400);
+        }
+    },[stdScroll]);
     return(
         <div className='intro_flex_overall'>
             <div className='intro_main_scroll_wrapper'>
@@ -189,24 +295,32 @@ const IntroMain = ({scrollY}) => {
                 </div>
                 <animated.div style={props6} className='intro_flex_container fixed' ref={introFlex} style={ {...secondStyle, clipPath:`inset(${cropRatio}% 0px 0px)`}}>
                     <div className='intro_flex '>
-                        <div className='intro_flex_title'>
-                            <div className='first_title'>
-                                몰입
-                            </div>
-                            
-                            <animated.div style={props}>
-                                하는
-                            </animated.div>
-                            
-                            <animated.div style={props2}>
-                                경험
+                        <div className='intro_flex_arrow_title_scroll_wrapper'>
+                            <animated.div style={props5} className='intro_flex_arrow_title_container' ref={arrowTitleContainer}>
+                                <div className='intro_flex_title'>
+                                    <div className='first_title'>
+                                        몰입
+                                    </div>
+                                    
+                                    <animated.div style={props}>
+                                        하는
+                                    </animated.div>
+                                    
+                                    <animated.div style={props2}>
+                                        경험
+                                    </animated.div>
+                                </div>
+                                <animated.div style={props4} className='arrow_container'><Arrow height='100%'/></animated.div>
+                                
                             </animated.div>
                         </div>
-                        <animated.div style={props4} className='arrow_container'><Arrow height='100%'/></animated.div>
-                        <animated.div style={props3} className='intro_flex_img_container'>
+                        <animated.div style={{...codeImageStyle,...props3}} className='intro_flex_img_container'>
                             <img className='intro_flex_img' src='/coding_text.png' alt='coding_text'></img>
                         </animated.div>
-                        <animated.div style={props5} className='intro_flex_description_container fixed' ref={introFlexDescriptionContainerRef}>
+
+                        <div className='transparent_one_vh'></div>
+
+                        <animated.div  style = {introFlexDescriptionContainerStyle} className='intro_flex_description_container' ref={introFlexDescriptionContainerRef}>
                             <div className='intro_flex_description_title_container' >
                                 <img className='intro_flex_moon_img' src={moon} alt='moon'/>
                                 <div className='intro_flex_description_title'>
