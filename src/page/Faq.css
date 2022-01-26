@@ -1,0 +1,14 @@
+.box{
+    width: 60vw;
+    margin: 0 auto;
+}
+.margintop{
+    padding-top: 60px;
+}
+.faq{
+    font-size: 10vw;
+    text-align: center;
+}
+.left{
+    text-align: left;
+}

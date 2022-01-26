@@ -11,14 +11,14 @@
   .front1,
   .back1 {
     background-size:cover;
-    box-shadow: 3px 3px 3px gray;
+    box-shadow: 3px 3px 10px gray;
     border-radius: 10px;
   }
 
   .front2,
   .back2 {
     background-size:cover;
-    box-shadow: 3px 3px 3px gray;
+    box-shadow: 3px 3px 10px gray;
     border-radius: 10px;
   }
   

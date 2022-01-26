@@ -164,7 +164,7 @@
      font-weight: bold;
      color: #969696;
      text-align : right;
-     margin-right: 20%;
+     margin-right: 30%;
  }
  /* .startup_img{
      width: 40%;
@@ -177,7 +177,7 @@
 .logobox{
     display:flex;
     justify-content: center;
-    margin-top: 5%;
+    margin-top: 10%;
 }
 .startup_img1{
     flex:1;

@@ -26,7 +26,7 @@ const Intro = ()=>{
         <>
             <div className='intro'>
                  
-                 <IntroMain scrollY={scrollY}/>
+                 {/* <IntroMain scrollY={scrollY}/> */}
                  
                  <div style={{position:'absolute', top:`calc(100vh + 8029px)`, width:'100%'}} className='Dg'>
                     <Dg scrollY={scrollY} >

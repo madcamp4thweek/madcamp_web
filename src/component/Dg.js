@@ -8,8 +8,7 @@ import Ipad from './Ipad.tsx'
 import Card1 from './Card1'
 import Card2 from './Card2'
 import './Card.styles.module.css'
-import network from '../img/network.gif';
-
+import network from '../img/network.gif'
 
 const Dg = () => {
     let boxsytle = {
@@ -25,6 +24,7 @@ const Dg = () => {
         AOS.init({
             duration: 1000});
     });
+
     return(
         <>
             <div className='small_title1' data-aos='fade-up'>
@@ -137,9 +137,8 @@ const Dg = () => {
             </div> */}
 
             <div className = "startup_description" data-aos='fade-up' data-aos-offset = '50'>
-                캠프 기간동안 여러 대표님들의 강연을 통해 <br/> 스타트업의 희로애락을 미리 체험해보세요.
-            </div>
-
+                몰입캠프에서 본엔젤스 소속 여러 대표님들의 <br/> 강연을 통해  스타트업의 희로애락을 미리 체험해보세요.
+            </div>      
         </>
         
     )
